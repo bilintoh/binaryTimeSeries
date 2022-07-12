@@ -1,0 +1,33 @@
+Package: binaryTimeSeries
+Type: Package
+Title: Analyzes a Binary Variable During a Time Series
+Version: 0.1.0
+Author: Thomas Mumuni Bilintoh <thomasbilintoh@yahoo.com>, Robert Gilmore Pontius Jr. <rpontius@clarku.edu>
+Maintainer: Thomas Mumuni Bilintoh <thomasbilintoh@yahoo.com>
+Description: Creates maps, pie charts, and stacked bar plots showing the trajectory of a binary variable during a time series. 
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.6.0)
+Imports: raster,
+         ggnewscale,
+         ggplot2,
+         terra,
+         stats,
+         reshape2,
+         sp,
+         dplyr,
+         tidyverse,
+         mice,
+         utils,
+         magrittr,
+         rgdal,
+         maptools,
+         stringi,
+         stringr,
+         prettymapr
+RoxygenNote: 7.1.2
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
