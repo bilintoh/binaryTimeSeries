@@ -4,7 +4,7 @@ Title: Analyzes a Binary Variable During a Time Series
 Version: 0.1.0
 Author: Thomas Mumuni Bilintoh <thomasbilintoh@yahoo.com>, Robert Gilmore Pontius Jr. <rpontius@clarku.edu>
 Maintainer: Thomas Mumuni Bilintoh <thomasbilintoh@yahoo.com>
-Description: Creates maps, pie charts, and stacked bar plots showing the trajectory of a binary variable during a time series. 
+Description: Creates maps, pie charts, and stacked bar plots showing the trajectory of a binary variable during a time series. For more information please consult: Bilintoh,Mumuni Thomas and Robert Gilmore Pontius Jr. (2022). "Methods to compare sites concerning a land cover category's change during various time intervals". GIScience and Remote Sensing.Under review.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
