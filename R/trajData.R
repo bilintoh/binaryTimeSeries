@@ -1,6 +1,6 @@
-#' creates the data which serves as input for the "trajplot" function.
-#' @param x is the data, which must be a RasterStack,RasterBrick,SpatRaster or data.frame.
-#' @param nodata is alphanumeric, which denotes no data in the dataset.
+#' creates the data which serves as input for the "trajPlot" function.
+#' @param x is the data, which must be a RasterStack,RasterBrick,SpatRaster or data frame.
+#' @param nodata is alphanumeric, which denotes no data in the data set.
 #' @param category is the category of interest. The default is set to 1.
 #' @param spres is a 1*2 vector indicating the spatial resolution of the data. The default is c(1000,1000).
 #' @param datacrs is the CRS of the input data.

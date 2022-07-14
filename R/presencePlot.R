@@ -1,12 +1,12 @@
 #' Creates two maps: a map showing how many times the category is present during the time series and
 #' a map showing how many times the category changes during the time series.
-#' @param input is the results from running the changeData function.
+#' @param input is the results from running the "changeData" function.
 #' @param pltunit is the unit which the current map is plotted in, one of cm, m, km, in, ft, mi. or lat or lon.
-#' This parameter is optional if dataEpsg is passed.
+#' This parameter is optional if "dataEpsg" is passed.
 #' @param dataEpsg is the projection of the current map. If extents are valid lat or lons,
 #' the projection is assumed to be lat and lon (EPSG:4326), or Spherical Mercator otherwise (EPSG:3857).
-#' This is done to work seamlessly with OpenStreetMap packages.currently it is set to 32632.
-#' @param scalePos where to align the scalebar. One of "bottomleft", "bottomright", "topleft", or "topright".
+#' This is done to work seamlessly with "OpenStreetMap" packages.currently it is set to 32632.
+#' @param scalePos where to align the scale bar. One of "bottomleft", "bottomright", "topleft", or "topright".
 #' @param narrowPos where to align the north arrow. One of "bottomleft", "bottomright", "topleft", or "topright".
 #' @param narrowSize is a numeric value indicating the size of the north arrow.
 #' @param categoryName is a character representing the name of the category of interest.Default is "marsh".

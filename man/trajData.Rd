@@ -2,7 +2,7 @@
 % Please edit documentation in R/trajData.R
 \name{trajData}
 \alias{trajData}
-\title{creates the data which serves as input for the "trajplot" function.}
+\title{creates the data which serves as input for the "trajPlot" function.}
 \usage{
 trajData(
   x,
@@ -14,9 +14,9 @@ trajData(
 )
 }
 \arguments{
-\item{x}{is the data, which must be a RasterStack,RasterBrick,SpatRaster or data.frame.}
+\item{x}{is the data, which must be a RasterStack,RasterBrick,SpatRaster or data frame.}
 
-\item{nodata}{is alphanumeric, which denotes no data in the dataset.}
+\item{nodata}{is alphanumeric, which denotes no data in the data set.}
 
 \item{category}{is the category of interest. The default is set to 1.}
 
@@ -31,7 +31,7 @@ unified area; else, the change is a percentage of the entire region under consid
 The output from \code{\link{trajData}}
 }
 \description{
-creates the data which serves as input for the "trajplot" function.
+creates the data which serves as input for the "trajPlot" function.
 }
 \examples{
 \dontrun{trajData(x,nodata = 2,category = 1,spres = c(1000,1000),datacrs = NULL,unified = "yes")

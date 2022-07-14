@@ -2,7 +2,7 @@
 % Please edit documentation in R/stackbarPlots.R
 \name{stackbarPlots}
 \alias{stackbarPlots}
-\title{Create stack bar plots showing trajectories' sizes and the three change components.}
+\title{Create stack bar plots showing trajectories sizes and the three change components.}
 \usage{
 stackbarPlots(
   input,
@@ -20,37 +20,38 @@ stackbarPlots(
 )
 }
 \arguments{
-\item{input}{is the results from running the dataStack function.}
+\item{input}{is the results from running the "dataStack" function.}
 
 \item{axisSize}{is a numerical value that control the size of the labels on tick marks of the horizontal
 and vertical tick marks.}
 
-\item{lbAxSize}{is a numerical value to control the size of the labels on the horizontal and verictcal axis.}
+\item{lbAxSize}{is a numerical value to control the size of the labels on the horizontal and vertical axis.}
 
 \item{lgSize}{is a numerical value to control the size of the legend text.}
 
 \item{titleSize}{is a numerical value to control the size of the title text.}
 
 \item{datbreaks}{is a string of "yes" or "no", which controls the range and sub-division of the vertical axis
-of the stacked bar plots.}
+of the stacked bar plots.The default is "no", which automatically generates the range and interval of the vertical axis.
+If "no" the user need to mannual input values for "upperlym","lowerlym", "lymby","upperlym2", and "lymby2".}
 
-\item{upperlym}{if datbreaks set to "yes," is a numerical value to control the upper limit of the trajecoty stackbar plot.}
+\item{upperlym}{if datbreaks set to "yes," is a numerical value to control the upper limit of the trajectory stack bar plot.}
 
-\item{lowerlym}{if datbreaks set to "yes," is a numerical value to control the lower limit of the trajecoty stackbar plot.}
+\item{lowerlym}{if datbreaks set to "yes," is a numerical value to control the lower limit of the trajectory stack bar plot.}
 
-\item{lymby}{if datbreaks set to "yes," is a numerical value to control interval on the vertical axis of the components of change stackbar plot.}
+\item{lymby}{if datbreaks set to "yes," is a numerical value to control interval on the vertical axis of the components of change stack bar plot.}
 
 \item{upperlym2}{if datbreaks set to "yes," is a numerical value to control the upper limit of the components of change stacked bar plot.}
 
 \item{lymby2}{if datbreaks set to "yes," is a numerical value to control the interval on the vertical axis of the components of change stacked bar plot.}
 
-\item{xAngle}{is a numerical value to control the orientation of the text on the vertical axis of the trajecoty stackbar plot}
+\item{xAngle}{is a numerical value to control the orientation of the text on the vertical axis of the trajectory stack bar plot}
 }
 \value{
 The output from \code{\link{stackbarPlots}}
 }
 \description{
-Create stack bar plots showing trajectories' sizes and the three change components.
+Create stack bar plots showing trajectories sizes and the three change components.
 }
 \examples{
 \dontrun{stackbarPlots(input,

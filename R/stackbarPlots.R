@@ -1,18 +1,19 @@
-#' Create stack bar plots showing trajectories' sizes and the three change components.
-#' @param input is the results from running the dataStack function.
+#' Create stack bar plots showing trajectories sizes and the three change components.
+#' @param input is the results from running the "dataStack" function.
 #' @param axisSize is a numerical value that control the size of the labels on tick marks of the horizontal
 #' and vertical tick marks.
-#' @param lbAxSize is a numerical value to control the size of the labels on the horizontal and verictcal axis.
+#' @param lbAxSize is a numerical value to control the size of the labels on the horizontal and vertical axis.
 #' @param lgSize is a numerical value to control the size of the legend text.
 #' @param titleSize is a numerical value to control the size of the title text.
 #' @param datbreaks is a string of "yes" or "no", which controls the range and sub-division of the vertical axis
-#' of the stacked bar plots.
-#' @param upperlym if datbreaks set to "yes," is a numerical value to control the upper limit of the trajecoty stackbar plot.
-#' @param lowerlym if datbreaks set to "yes," is a numerical value to control the lower limit of the trajecoty stackbar plot.
-#' @param lymby if datbreaks set to "yes," is a numerical value to control interval on the vertical axis of the components of change stackbar plot.
+#' of the stacked bar plots.The default is "no", which automatically generates the range and interval of the vertical axis.
+#' If "no" the user need to mannual input values for "upperlym","lowerlym", "lymby","upperlym2", and "lymby2".
+#' @param upperlym if datbreaks set to "yes," is a numerical value to control the upper limit of the trajectory stack bar plot.
+#' @param lowerlym if datbreaks set to "yes," is a numerical value to control the lower limit of the trajectory stack bar plot.
+#' @param lymby if datbreaks set to "yes," is a numerical value to control interval on the vertical axis of the components of change stack bar plot.
 #' @param upperlym2 if datbreaks set to "yes," is a numerical value to control the upper limit of the components of change stacked bar plot.
 #' @param lymby2 if datbreaks set to "yes," is a numerical value to control the interval on the vertical axis of the components of change stacked bar plot.
-#' @param xAngle  is a numerical value to control the orientation of the text on the vertical axis of the trajecoty stackbar plot
+#' @param xAngle  is a numerical value to control the orientation of the text on the vertical axis of the trajectory stack bar plot
 #  One of 0,90,180 or 360.
 #' @return The output from \code{\link{stackbarPlots}}
 #' @import ggplot2

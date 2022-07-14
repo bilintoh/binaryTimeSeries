@@ -1,5 +1,5 @@
 ---
-title: "Tuotial concerning the useage of the binaryTimeSeries package"
+title: "Tutorial concerning the useage of the binaryTimeSeries package"
 author: "Thomas Mumuni Bilintoh"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -11,7 +11,7 @@ vignette: >
 
 # binaryTimeSeries
 
-## This tutorial illustrates the concepts of the trajectories of a binary variable using an example data called Y.
+## This tutorial illustrates the concepts of the trajectories of a binary variable using an example data.
 
 ```{r setup,include = FALSE,warning=FALSE}
 knitr::opts_chunk$set(
@@ -27,24 +27,21 @@ library(reshape2)
 library(raster)
 library(terra)
 library(dplyr)
-library(stringi)
-library(stringr)
-library(tidyverse)
 library(maptools) 
 ```
 
 ## Data
-The example data is a times series of five binary maps at five time points: 2000,2001,2002,2003, and 2005.
+The example data is a time series of five binary maps at five time points: 2000, 2001, 2002,2003, and 2005.
 The tutorial analyzes the trajectory of variable 1, which in this instance indicates presence, whiles 0 represents absence.
 
-The time series maps are available in "tif" and csv formats and included in the package. 
+The time series maps are available in GeoTIFF and CSV formats and included in the package. 
 The first step is to read the raster files and put them in a data frame.
 
 ```{r, eval=TRUE, warning=FALSE}
 # Read the raster files from example data as terra raster format.
 rasstackY <- terra::rast(system.file("external/Example_raster_Y.tif", package="binaryTimeSeries"))
 
-#NB: The package comes with "Example_Data_Y.tif", "Example_Data_Y.cvs", "Example_raster_X.tif", and "Example_Data_X.cvs".
+#NB: The package comes with "Example_Data_Y.tif", "Example_Data_Y.cvs", "Example_raster_X.tif", and "Example_Data_X.cvs."
 
 # Set the spatial resolution of the data. 
 datares <- c( 1000, 1000)
@@ -56,7 +53,7 @@ datprj <-"+proj=utm +zone=32 +datum=WGS84 +ellps=GRS80  +units=m +no_defs"
 
 ## Calling the `changeData` function
 
-Next, use the **changeData** function to Create a list containing the raster datasets 
+Next, use the **changeData** function to Create a list containing the raster data sets 
 concerning the number of times the category of interest is present and the number of times
 the category of interest changes during the time series.
 Type ?changeData in your R console to see the help file.
@@ -110,7 +107,7 @@ b
 
 ## Calling the `trajPlot` function
 
-The **trajPlot** function creates a map and piechart of the trajectories of the category of interest.
+The **trajPlot** function creates a map and pie chart of the trajectories of the category of interest.
 Type ?trajPlot in your R console to see help file.
 ```{r, eval=TRUE, warning=FALSE, echo=FALSE}
 trajPlot(input = b,
@@ -143,7 +140,7 @@ c <- dataStack(x = rasstackY,
                unified = "yes",
                timePoints = timepoints,
                categoryName = "marsh",
-               regionName = "Region Y")
+               regionName = "extent")
 c
 ```
 
@@ -168,13 +165,14 @@ stackbarPlots(input = c,
 ```
 
 ## References
-
 Pontius Jr, R. G. (2022). Metrics That Make a Difference: How to Analyze Change and Error. Springer Nature Switzerland AG.
-https://doi.org/10.1007/978-3-030-70765-1
+<https://doi.org/10.1007/978-3-030-70765-1>
 
-Bilintoh, T.M., (2022). Intensity Analysis to Study the Dynamics of reforestation in the Rio Doce Water Basin, Brazil. Frontiers in Remote Sensing,  3 (873341), 13. https://doi:10.3389/frsen.2022.873341 
+Bilintoh, T.M., (2022). Intensity Analysis to Study the Dynamics of reforestation in the Rio Doce Water Basin, Brazil. Frontiers in Remote Sensing,  3 (873341), 13. <https://doi.org/10.3389/frsen.2022.873341> 
+
+Pontius Jr, R. G. (2019). Component Intensities to relate difference by category with difference overall.International Journal of Applied Earth Observation and Geoinformation, 77: 94-99. <https://doi.org/10.1016/j.jag.2018.07.024>
 
 Pontius Jr, R. G., Krithivasan, R., Sauls, L., Yan, Y., & Zhang, Y. (2017). Methods to summarize change among land
-categories across time intervals. Journal of Land Use Science, 12(4), 218–230. https://doi.org/10.1080/1747423X.2017.1338768
+categories across time intervals. Journal of Land Use Science, 12(4), 218–230. <https://doi.org/10.1080/1747423X.2017.1338768>
 
-Pontius Jr, R. G., & Santacruz, A. (2014). Quantity, exchange, and shift components of difference in a square contingency table. International Journal of Remote Sensing, 35(21), 7543–7554. https://doi.org/10.1080/21
+Pontius Jr, R. G., & Santacruz, A. (2014). Quantity, exchange, and shift components of difference in a square contingency table. International Journal of Remote Sensing, 35(21), 7543–7554. <https://dx.doi.org/10.1080/2150704X.2014.969814>

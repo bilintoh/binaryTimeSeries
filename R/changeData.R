@@ -1,12 +1,12 @@
-#' Creates a list containing the raster datasets concerning the number
+#' Creates a list containing the raster data sets concerning the number
 #' of times the category of interest is present and the number of times
 #' the category of interest changes during the time series.
 #' @param x is the data, which must be a RasterStack,RasterBrick,SpatRaster or
-#' data.frame.
-#' @param nodata is alphanumeric, which denotes no data in the dataset.
+#' data frame.
+#' @param nodata is alphanumeric, which denotes no data in the data set.
 #' @param category is the category of interest. The default is set to 1.
 #' @param spres is a 1*2 vector indicating the spatial resolution of the data.
-#' The default is set to c(1000,1000)
+#' The default is set to c(1000,1000).
 #' @param datacrs is the Coordinate Reference System (CRS) of the input data.
 #' @return The output from \code{\link{changeData}}
 #' @importFrom raster raster

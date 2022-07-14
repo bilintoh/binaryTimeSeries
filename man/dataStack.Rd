@@ -15,16 +15,16 @@ dataStack(
 )
 }
 \arguments{
-\item{x}{is the data, which must be a RasterStack,RasterBrick,SpatRaster or data.frame.}
+\item{x}{is the data, which must be a RasterStack,RasterBrick,SpatRaster or data frame.}
 
 \item{category}{is the category of interest. The default is set to 1.}
 
-\item{nodata}{is alphanumeric, which denotes no data in the dataset.}
+\item{nodata}{is alphanumeric, which denotes no data in the data set.}
 
 \item{unified}{is a string, which can be "yes" or "no" only. If "yes," the change is a percentage of a region's
 unified area; else, the change is a percentage of the  entire region under consideration.}
 
-\item{timePoints}{is a vector containg the time points under consideration.The default is  c(2000,2001,2002,2003,2005).}
+\item{timePoints}{is a vector containing the time points under consideration.The default is  c(2000, 2001, 2002, 2003, 2005).}
 
 \item{categoryName}{is a character representing the name of the category of interest.Default is "category"}
 
@@ -38,5 +38,11 @@ Creates results that serve as input for the stackbarPlot function.
 }
 \examples{
 \dontrun{trajPlot(x,
+                  category = 1,
+                   nodata = 2,
+                   unified = "yes",
+                   timePoints = c(2000,2001,2002,2003,2005),
+                   categoryName = "Category",
+                   regionName = "Study Region")
 }
 }

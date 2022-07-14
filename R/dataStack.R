@@ -1,10 +1,10 @@
 #' Creates results that serve as input for the stackbarPlot function.
-#' @param x is the data, which must be a RasterStack,RasterBrick,SpatRaster or data.frame.
+#' @param x is the data, which must be a RasterStack,RasterBrick,SpatRaster or data frame.
 #' @param category is the category of interest. The default is set to 1.
-#' @param nodata is alphanumeric, which denotes no data in the dataset.
+#' @param nodata is alphanumeric, which denotes no data in the data set.
 #' @param unified is a string, which can be "yes" or "no" only. If "yes," the change is a percentage of a region's
 #' unified area; else, the change is a percentage of the  entire region under consideration.
-#' @param timePoints is a vector containing the time points under consideration.The default is  c(2000,2001,2002,2003,2005).
+#' @param timePoints is a vector containing the time points under consideration.The default is  c(2000, 2001, 2002, 2003, 2005).
 #' @param categoryName is a character representing the name of the category of interest.Default is "category"
 #' @param regionName is a string or character the name of the study region.
 #' @import dplyr
@@ -12,12 +12,12 @@
 #' @export
 #' @examples
 #' \dontrun{trajPlot(x,
-#                    category = 1,
-#                    nodata = 2,
-#                    unified = "yes",
-#                    timePoints = c(2000,2001,2002,2003,2005),
-#                    categoryName = "Category",
-#                    regionName = "Study Region")
+#'                   category = 1,
+#'                    nodata = 2,
+#'                    unified = "yes",
+#'                    timePoints = c(2000,2001,2002,2003,2005),
+#'                    categoryName = "Category",
+#'                    regionName = "Study Region")
 #'}
 dataStack <- function(x,
                       category = 1,
@@ -47,10 +47,10 @@ dataStack <- function(x,
   dataNoxy3<- dataNoxy2[rowSums(dataNoxy2[]) < n,]
   if (unified == "no"){
     spatialExtent <- dataNoxy1
-    stackTitle <- paste("Change in ",categoryName,"where region is",regionName)
+    stackTitle <- paste("Change in presence of",categoryName,"category where extent is",regionName)
   } else if(unified == "yes") {
     spatialExtent <- dataNoxy2
-    stackTitle <- paste("Change in region where any time point is",categoryName,"of",regionName)
+    stackTitle <- paste("Change in extent where any time point is",categoryName,"category in",regionName)
   }
   lengthSpext <- nrow(spatialExtent)
   seg1 <- dataNoxy3 %>% subset(dataNoxy3[, 1] == 1 & dataNoxy3[, n] == 0)
@@ -224,7 +224,7 @@ dataStack <- function(x,
   compVals <- c(netAbs,allocation,alternation)
   dfCompnents <- as.data.frame(compVals,nameRegion)
   dfCompnents$compNames <- compNames
-  dfCompnents2 <- reshape2::melt(dfCompnents,id = "compNames")
+  dfCompnents2 <- reshape2::melt(dfCompnents, id =  "compNames")
   trajNames2 <- c("Absence\u2192Alternation\u2192Absence",
                   "Presence\u2192Alternation\u2192Presence",
                   "Absence\u2192Alternation\u2192Gain\u2192Presence",

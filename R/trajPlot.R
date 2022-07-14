@@ -1,10 +1,10 @@
-#' Creates a map and piechart of the trajectories of the category of interest.
-#' @param input is the results from running the trajData function.
+#' Creates a map and pie chart of the trajectories of the category of interest.
+#' @param input is the results from running the "trajData" function.
 #' @param pltunit is the unit in which the current map is plotted in, one of cm, m, km, in, ft, mi. or lat or lon.
 #' @param dataEpsg is the projection of the current map. If extents are valid lat and lons,
 #' the projection is assumed to be lat and lon (EPSG:4326), or Spherical Mercator otherwise.
 #' @param categoryName is a character representing the name of the category of interest.Default is "marsh".
-#' @param scalePos where to align the scalebar. One of "bottomleft", "bottomright", "topleft", or "topright".
+#' @param scalePos where to align the scale bar. One of "bottomleft", "bottomright", "topleft", or "topright".
 #' @param narrowPos is a numeric value indicating the size of the north arrow.
 #' @param narrowSize is a numeric value indicating the size of the north arrow.
 #' @param xAxis is a character indicating label for the horizontal axis. default is "Longitude (m)".
@@ -17,19 +17,19 @@
 #' @export
 #' @examples
 #' \dontrun{trajPlot(input,
-#                    pltunit = "m",
-#                    dataEpsg = 32632,
-#                    categoryName = "category's",
-#                    scalePos = "bottomleft",
-#                    narrowPos = "topright",
-#                    narrowSize = 1,
-#                    xAxis = "Horizontal (m)",
-#                    yAxis = "Vertical (m)",
-#                    axisText = 1.2,
-#                    axisLabel = 1.4,
-#                    plotTitle = 1.5,
-#                    legendTex = 1.2,
-#                    posleg = "bottomright")
+#'                   pltunit = "m",
+#'                    dataEpsg = 32632,
+#'                    categoryName = "category's",
+#'                   scalePos = "bottomleft",
+#'                    narrowPos = "topright",
+#'                    narrowSize = 1,
+#'                    xAxis = "Horizontal (m)",
+#'                    yAxis = "Vertical (m)",
+#'                    axisText = 1.2,
+#'                    axisLabel = 1.4,
+#'                    plotTitle = 1.5,
+#'                    legendTex = 1.2,
+#'                    posleg = "bottomright")
 #'}
 trajPlot <- function(input,
                      pltunit = "m",
