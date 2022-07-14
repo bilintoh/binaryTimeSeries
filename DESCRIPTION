@@ -1,7 +1,7 @@
 Type: Package
 Package: binaryTimeSeries
 Title: Analyzes a Binary Variable During a Time Series
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: 
   c(person(given = "Thomas Mumuni",
            family = "Bilintoh",
@@ -12,7 +12,7 @@ Authors@R:
            family = "Pontius Jr",
            role = "aut",
            comment = c(ORCID = "0000-0001-7287-5875")))
-Description:  A procedure to create maps, pie charts, and stacked bar plots 
+Description: A procedure to create maps, pie charts, and stacked bar plots 
     showing the trajectory of a binary variable during a time series. 
     You provide a time series of data sets as a stack of raster files or a 
     data frame and call the various functions in 'binaryTimeSeries' to create 
