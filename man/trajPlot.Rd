@@ -2,7 +2,7 @@
 % Please edit documentation in R/trajPlot.R
 \name{trajPlot}
 \alias{trajPlot}
-\title{Creates a map and piechart of the trajectories of the category of interest.}
+\title{Creates a map and pie chart of the trajectories of the category of interest.}
 \usage{
 trajPlot(
   input,
@@ -21,7 +21,7 @@ trajPlot(
 )
 }
 \arguments{
-\item{input}{is the results from running the trajData function.}
+\item{input}{is the results from running the "trajData" function.}
 
 \item{pltunit}{is the unit in which the current map is plotted in, one of cm, m, km, in, ft, mi. or lat or lon.}
 
@@ -30,7 +30,7 @@ the projection is assumed to be lat and lon (EPSG:4326), or Spherical Mercator o
 
 \item{categoryName}{is a character representing the name of the category of interest.Default is "marsh".}
 
-\item{scalePos}{where to align the scalebar. One of "bottomleft", "bottomright", "topleft", or "topright".}
+\item{scalePos}{where to align the scale bar. One of "bottomleft", "bottomright", "topleft", or "topright".}
 
 \item{narrowPos}{is a numeric value indicating the size of the north arrow.}
 
@@ -52,9 +52,22 @@ the projection is assumed to be lat and lon (EPSG:4326), or Spherical Mercator o
 The output from \code{\link{trajPlot}}
 }
 \description{
-Creates a map and piechart of the trajectories of the category of interest.
+Creates a map and pie chart of the trajectories of the category of interest.
 }
 \examples{
 \dontrun{trajPlot(input,
+                  pltunit = "m",
+                   dataEpsg = 32632,
+                   categoryName = "category's",
+                  scalePos = "bottomleft",
+                   narrowPos = "topright",
+                   narrowSize = 1,
+                   xAxis = "Horizontal (m)",
+                   yAxis = "Vertical (m)",
+                   axisText = 1.2,
+                   axisLabel = 1.4,
+                   plotTitle = 1.5,
+                   legendTex = 1.2,
+                   posleg = "bottomright")
 }
 }
