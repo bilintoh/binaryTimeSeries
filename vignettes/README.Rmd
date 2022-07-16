@@ -4,7 +4,7 @@ author: "Thomas Mumuni Bilintoh"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{binaryTimeSeries README}
+  %\VignetteIndexEntry{binaryTimeSeries TUTORIALS}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
