@@ -9,8 +9,4 @@ sub folder of my package.
 4. added immediate call of on.exit() to **trajPlot** and **presencePlot**  
 to reset par parameters when the function is exited.  
 
-## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-* This is a new release.
