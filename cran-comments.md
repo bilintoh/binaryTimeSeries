@@ -2,7 +2,7 @@
 
 This is a resubmission. In this version I have:
 1. removed all the **dontrun{}** in the examples.
-2. made sure all references in the DESCRIPTION file conforms with CRAN
+2. made sure all references in the DESCRIPTION file conform with CRAN
 standards.
 3. added small files needed for the examples or vignette in the inst/external
 sub folder of my package. 
