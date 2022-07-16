@@ -19,11 +19,11 @@ Description: A procedure to create maps, pie charts, and stacked bar plots
     your desired graphics.For more information please consult: 
     Pontius Jr, R. G. (2022). "Metrics That Make a Difference: 
     How to Analyze Change and Error" Springer Nature Switzerland AG
-    <doi.org/10.1007/978-3-030-70765-1> and 
+    <doi:/10.1007/978-3-030-70765-1> and 
     Bilintoh, T.M., (2022). "Intensity Analysis to Study the Dynamics of 
     reforestation in the Rio Doce Water Basin, Brazil". 
     Frontiers in Remote Sensing, 3 (873341), 13. 
-    <doi.org/10.3389/frsen.2022.873341>. 
+    <doi:/10.3389/frsen.2022.873341>. 
 License: AGPL (>= 3)
 Depends: 
     R (>= 3.3.0), rgdal
