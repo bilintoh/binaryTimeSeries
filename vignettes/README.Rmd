@@ -31,14 +31,14 @@ library(maptools)
 ```
 
 ## Data
-The example data is a time series of five binary maps at five time points: 2000, 2001, 2002,2003, and 2005.
+The example data is a time series of five binary maps at five time points: 2000, 2001, 2002, 2003, and 2005.
 The tutorial analyzes the trajectory of variable 1, which in this instance indicates presence, whiles 0 represents absence.
 
 The time series maps are available in GeoTIFF and CSV formats and included in the package. 
-The first step is to read the raster files and put them in a data frame.
+The first step is to load the raster files.
 
 ```{r, eval=TRUE, warning=FALSE}
-# Read the raster files from example data as terra raster format.
+# Read the raster files from "externa"l folder as terra raster format.
 rasstackY <- terra::rast(system.file("external/Example_raster_Y.tif",package="binaryTimeSeries"))
 
 #NB: The package comes with "Example_Data_Y.tif", "Example_Data_Y.cvs", "Example_raster_X.tif", and "Example_Data_X.cvs."
@@ -53,12 +53,12 @@ datprj <-"+proj=utm +zone=32 +datum=WGS84 +ellps=GRS80  +units=m +no_defs"
 
 ## Calling the `changeData` function
 
-Next, use the **changeData** function to Create a list containing the raster data sets 
-concerning the number of times the category of interest is present and the number of times
-the category of interest changes during the time series.
-Type ?changeData in your R console to see the help file.
+Next, use the **changeData** function to create a list containing the raster 
+data sets concerning the number of times the category of interest is present and 
+the number of times the category of interest changes during the time series.
+Output from the **changeData** function serves as input data for the 
+**presencePlot** function. Type "?changeData" in your R console to see the help file.
 ```{r, eval=TRUE, warning=FALSE}
-
 # Create input data for the presencePlot function and assign the results to a variable, e.g., "a."
 a <- changeData (rasstackY,
                  nodata = 2,
@@ -70,10 +70,8 @@ a
 
 ## Calling the `presencePlot` function
 
-Creates two maps: a map showing how many times the category is present during the time series and
-a map showing how many times the category changes during the time series.
-Next, use the **presencePlot** function to create the number of presences and change maps.
-Type ?presencePlot in your R console to see the help file.
+Use the **presencePlot** function to create the number of presences and change maps. 
+Type "?presencePlot" in your R console to see the help file.
 ```{r, eval=TRUE, warning=FALSE}
 presencePlot (input = a,
               pltunit = "m",
@@ -92,8 +90,8 @@ presencePlot (input = a,
 
 ## Calling the `trajData` function
 
-The **trajData** function creates data that serves as input for the "trajplot" function.
-Type ?trajData in your R console to see the help file.
+The **trajData** function creates the data that serves as input for the **trajPlot** function.
+Type "?trajData" in your R console to see the help file.
 ```{r, eval=TRUE, warning=FALSE}
 # Create input data for the trajPlot function and assign the results to a variable, e.g., "b."
 b <- trajData(x = rasstackY,
@@ -109,7 +107,7 @@ b
 ## Calling the `trajPlot` function
 
 The **trajPlot** function creates a map and pie chart of the trajectories of the category of interest.
-Type ?trajPlot in your R console to see help file.
+Type "?trajPlot" in your R console to see the help file.
 ```{r, eval=TRUE, warning=FALSE, echo=FALSE}
 trajPlot(input = b,
          pltunit = "m",
@@ -129,10 +127,10 @@ trajPlot(input = b,
 
 ## Calling the `dataStack` function
 
-The **dataStack** function create data which serves as input for the "stackbarPlots" function.
-Type ?dataStack in your R console to see the help file.
+The **dataStack** function create the data which serves as input for the "stackbarPlots" function.
+Type "?dataStack" in your R console to see the help file.
 ```{r, eval=TRUE, warning=FALSE}
-# Create a vector variable containing the number of time points
+# Create a vector variable containing the time points
 timepoints <- c(2000,2001,2002,2003,2005)
 
 # Use the dataStack function to create input for the stackbarPlots function.
@@ -148,8 +146,9 @@ c
 
 ## Calling the `stackbarPlots` function
 
-The **stackbarPlots** function creates stacked bar plots showing trajectories' sizes and the three change components.
-Type ?stackbarPlots in your R console to see the help file
+The **stackbarPlots** function creates stacked bar plots showing the sizes of a 
+category's trajectory during each time interval and the three Change 
+Components. Type "?stackbarPlots" in your R console to see the help file.
 ```{r, eval=TRUE, warning=FALSE, echo=FALSE}
 # Create the stacked bars 
 stackbarPlots(input = c,
