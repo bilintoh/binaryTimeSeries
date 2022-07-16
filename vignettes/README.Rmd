@@ -1,10 +1,10 @@
 ---
-title: "Tutorial concerning the useage of the binaryTimeSeries package"
+title: "Trajectories of a binary varible"
 author: "Thomas Mumuni Bilintoh"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{binaryTimeSeries TUTORIALS}
+  %\VignetteIndexEntry{binaryTimeSeries}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
