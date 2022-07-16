@@ -18,14 +18,15 @@
 #' @importFrom terra rast
 #' @export
 #' @examples
-#' \dontrun{changeData(x = data,nodata = 2,category = 1,spres = c(1000,1000),
-#' datacrs = "+proj=utm +zone=32 +datum=WGS84 +ellps=GRS80  +units=m +no_defs")
-#' }
-changeData <- function(x,
-                       nodata = 2,
-                       category = 1,
-                       spres = c(1000,1000),
-                       datacrs = NULL){
+#' example_data <- terra::rast(system.file("external/Example_raster_Y.tif",package="binaryTimeSeries"))
+#' no_data <- 2
+#' cat_interest <- 1
+#' data_res <- c(1000,1000)
+#' data_prj <- "+proj=utm +zone=32 +datum=WGS84 +ellps=GRS80  +units=m +no_defs"
+#' chdata_output <- changeData(x = example_data,nodata = no_data,
+#' category = cat_interest,spres = data_res,datacrs = data_prj)
+#'
+changeData <- function(x,nodata,category,spres,datacrs = NULL){
   if(!class(x) %in% c("RasterStack","RasterBrick","SpatRaster","data.frame")) {
     stop("This function is intended for rasters and dataframes only", call. = FALSE)
   } else if (class(x) %in% c("RasterStack","RasterBrick")) {

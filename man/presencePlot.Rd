@@ -56,17 +56,16 @@ Creates two maps: a map showing how many times the category is present during th
 a map showing how many times the category changes during the time series.
 }
 \examples{
-\dontrun{plotChange(input,
-pltunit = "m",
-dataEpsg = 32632,
-scalePos = "bottomleft",
-narrowPos = "topright",
-narrowSize = 1,
-categoryName = "category",
-xAxis = "Horizontal (m)",
-yAxis = "Vertical (m)",
-axisText = 1.2,
-axisLabel = 1.2,
-plotTitle = 1.5)
-}
+example_data <- terra::rast(system.file("external/Example_raster_Y.tif",package="binaryTimeSeries"))
+no_data <- 2
+cat_interest <- 1
+data_res <- c(1000,1000)
+data_prj <- "+proj=utm +zone=32 +datum=WGS84 +ellps=GRS80  +units=m +no_defs"
+chdata_output <- changeData(x = example_data,nodata = no_data,
+category = cat_interest,spres = data_res,datacrs = data_prj)
+ch_maps <- presencePlot(input = chdata_output,pltunit = "m",dataEpsg = 32632,
+scalePos = "bottomleft",narrowPos = "topright",narrowSize = 1,
+categoryName = "category",xAxis = "Horizontal (m)",yAxis = "Vertical (m)",
+axisText = 1.2,axisLabel = 1.2,plotTitle = 1.5)
+
 }

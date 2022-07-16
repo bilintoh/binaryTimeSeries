@@ -55,19 +55,14 @@ The output from \code{\link{trajPlot}}
 Creates a map and pie chart of the trajectories of the category of interest.
 }
 \examples{
-\dontrun{trajPlot(input,
-                  pltunit = "m",
-                   dataEpsg = 32632,
-                   categoryName = "category's",
-                  scalePos = "bottomleft",
-                   narrowPos = "topright",
-                   narrowSize = 1,
-                   xAxis = "Horizontal (m)",
-                   yAxis = "Vertical (m)",
-                   axisText = 1.2,
-                   axisLabel = 1.4,
-                   plotTitle = 1.5,
-                   legendTex = 1.2,
-                   posleg = "bottomright")
-}
+example_data <- terra::rast(system.file("external/Example_raster_Y.tif",package="binaryTimeSeries"))
+no_data <- 2
+cat_interest <- 1
+data_res <- c(1000,1000)
+data_prj <- "+proj=utm +zone=32 +datum=WGS84 +ellps=GRS80  +units=m +no_defs"
+unified_resp <- "yes"
+trajdt_output <- trajData(x = example_data,nodata = no_data,
+category = cat_interest,spres = data_res,datacrs = data_prj,unified = unified_resp)
+trjplt_output <- trajPlot(input = trajdt_output)
+
 }

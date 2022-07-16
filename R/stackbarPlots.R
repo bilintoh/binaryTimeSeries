@@ -20,18 +20,20 @@
 #' @import ggnewscale
 #' @export
 #' @examples
-#' \dontrun{stackbarPlots(input,
-#'                        axisSize = 12,
-#'                        lbAxSize = 15,
-#'                        lgSize = 12,
-#'                        titleSize = 15,
-#'                        upperlym = 35,
-#'                        lowerlym = - 50,
-#'                        lymby = 5,
-#'                        upperlym2 = 0.5,
-#'                        lymby2 = 0.1,
-#'                        xAngle = 0)
-#'}
+#' example_data <- terra::rast(system.file("external/Example_raster_Y.tif",package="binaryTimeSeries"))
+#' no_data <- 2
+#' cat_interest <- 1
+#' unified_resp <- "yes"
+#' time_points <- c(2000,2001,2002,2003,2005)
+#' categ_name <- "Category"
+#' region_name <- "Study Region"
+#' datstk_output <- dataStack(x = example_data,nodata = no_data,category = cat_interest,
+#' unified = unified_resp,timePoints = time_points,categoryName = categ_name,
+#' regionName = region_name)
+#' stkbarplt_output <- stackbarPlots(input = datstk_output,axisSize = 12,
+#' lbAxSize = 15,lgSize = 12,titleSize = 15,upperlym = 35,lowerlym = - 50,
+#' lymby = 5,upperlym2 = 0.5,lymby2 = 0.1,xAngle = 0)
+#'
 stackbarPlots <- function(input,
                           axisSize = 12,
                           lbAxSize = 15,

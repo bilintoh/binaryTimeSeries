@@ -11,17 +11,19 @@
 #' @return The output from \code{\link{dataStack}}
 #' @export
 #' @examples
-#' \dontrun{trajPlot(x,
-#'                   category = 1,
-#'                    nodata = 2,
-#'                    unified = "yes",
-#'                    timePoints = c(2000,2001,2002,2003,2005),
-#'                    categoryName = "Category",
-#'                    regionName = "Study Region")
-#'}
+#' example_data <- terra::rast(system.file("external/Example_raster_Y.tif",package="binaryTimeSeries"))
+#' no_data <- 2
+#' cat_interest <- 1
+#' unified_resp <- "yes"
+#' time_points <- c(2000,2001,2002,2003,2005)
+#' categ_name <- "Category"
+#' region_name <- "Study Region"
+#' datstk_output <- dataStack(x = example_data,nodata = no_data,category = cat_interest,
+#' unified = unified_resp,timePoints = time_points,categoryName = categ_name,
+#' regionName = region_name)
 dataStack <- function(x,
-                      category = 1,
                       nodata = 2,
+                      category = 1,
                       unified = "yes",
                       timePoints = c(2000,2001,2002,2003,2005),
                       categoryName = "marsh",

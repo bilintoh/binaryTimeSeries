@@ -16,21 +16,16 @@
 #' @return The output from \code{\link{trajPlot}}
 #' @export
 #' @examples
-#' \dontrun{trajPlot(input,
-#'                   pltunit = "m",
-#'                    dataEpsg = 32632,
-#'                    categoryName = "category's",
-#'                   scalePos = "bottomleft",
-#'                    narrowPos = "topright",
-#'                    narrowSize = 1,
-#'                    xAxis = "Horizontal (m)",
-#'                    yAxis = "Vertical (m)",
-#'                    axisText = 1.2,
-#'                    axisLabel = 1.4,
-#'                    plotTitle = 1.5,
-#'                    legendTex = 1.2,
-#'                    posleg = "bottomright")
-#'}
+#' example_data <- terra::rast(system.file("external/Example_raster_Y.tif",package="binaryTimeSeries"))
+#' no_data <- 2
+#' cat_interest <- 1
+#' data_res <- c(1000,1000)
+#' data_prj <- "+proj=utm +zone=32 +datum=WGS84 +ellps=GRS80  +units=m +no_defs"
+#' unified_resp <- "yes"
+#' trajdt_output <- trajData(x = example_data,nodata = no_data,
+#' category = cat_interest,spres = data_res,datacrs = data_prj,unified = unified_resp)
+#' trjplt_output <- trajPlot(input = trajdt_output)
+#'
 trajPlot <- function(input,
                      pltunit = "m",
                      dataEpsg = 32632,
@@ -43,16 +38,17 @@ trajPlot <- function(input,
                      axisText = 1.2,
                      axisLabel = 1.4,
                      plotTitle = 1.5,
-                     legendTex = 0.9
-                     ){
+                     legendTex = 0.9){
   clon <- data.frame(matrix(9, nrow = 1,ncol = 3))
   clon$X2 <- "#ffffff"
   clon$X3 <- "No Data"
   names(clon) <- c("ID","myCol","cl")
   lengData <- input[[2]]
   lengData <- rbind(lengData,clon)
-  graphics::par(xpd = FALSE)
-  graphics::par(mai = c(1, 1, 1, 3) + 0.1)
+  op1 <- graphics::par(xpd = FALSE)
+  on.exit(graphics::par(op1))
+  op2 <- graphics::par(mai = c(1, 1, 1, 3) + 0.1)
+  on.exit(graphics::par(op2))
   raster::plot((input[[1]]),
                col = as.character(input[[2]]$myCol),
                legend = F,
@@ -65,14 +61,15 @@ trajPlot <- function(input,
                cex.lab = axisLabel,
                cex.main = plotTitle)
   coord <- graphics::par("usr")
-  graphics::par(xpd = TRUE)
+  op3 <- graphics::par(xpd = TRUE)
+  on.exit(graphics::par(op3))
   graphics::legend(x = coord[2], y = coord[4],
-         title = "Trajectories",
-         legend = lengData$cl,
-         fill = as.character(lengData$myCol),
-         border = TRUE,
-         bty = "n",
-         cex = legendTex)
+                   title = "Trajectories",
+                   legend = lengData$cl,
+                   fill = as.character(lengData$myCol),
+                   border = TRUE,
+                   bty = "n",
+                   cex = legendTex)
   prettymapr::addscalebar(pltunit,
                           plotepsg  = dataEpsg,
                           pos = scalePos)

@@ -4,7 +4,7 @@ author: "Thomas Mumuni Bilintoh"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{binaryTimeSeries TUTORIALS}
+  %\VignetteIndexEntry{binaryTimeSeries README}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -39,7 +39,7 @@ The first step is to read the raster files and put them in a data frame.
 
 ```{r, eval=TRUE, warning=FALSE}
 # Read the raster files from example data as terra raster format.
-rasstackY <- terra::rast(system.file("external/Example_raster_Y.tif", package="binaryTimeSeries"))
+rasstackY <- terra::rast(system.file("external/Example_raster_Y.tif",package="binaryTimeSeries"))
 
 #NB: The package comes with "Example_Data_Y.tif", "Example_Data_Y.cvs", "Example_raster_X.tif", and "Example_Data_X.cvs."
 
@@ -87,7 +87,7 @@ presencePlot (input = a,
               axisText = 1.2,
               axisLabel = 1.2,
               plotTitle = 1)
-
+              
 ```
 
 ## Calling the `trajData` function
@@ -96,12 +96,13 @@ The **trajData** function creates data that serves as input for the "trajplot" f
 Type ?trajData in your R console to see the help file.
 ```{r, eval=TRUE, warning=FALSE}
 # Create input data for the trajPlot function and assign the results to a variable, e.g., "b."
-b <- trajData (x = rasstackY,
-               nodata = 2,
-               category = 1,
-               spres = datares,
-               datacrs = datprj,
-               unified = "yes")# if "no", the analysis considers the entire study region.
+b <- trajData(x = rasstackY,
+             nodata = 2,
+             category = 1,
+             spres = datares,
+             datacrs = datprj,
+             unified = "yes")# if "no", the analysis considers the entire study region.
+
 b
 ```
 
@@ -123,6 +124,7 @@ trajPlot(input = b,
          axisLabel = 1.4,
          plotTitle = 1.5,
          legendTex = 0.9)
+
 ```
 
 ## Calling the `dataStack` function
@@ -162,17 +164,17 @@ stackbarPlots(input = c,
               upperlym2 = 35,
               lymby2 = 5,
               xAngle = 0)
+
 ```
 
 ## References
 Pontius Jr, R. G. (2022). Metrics That Make a Difference: How to Analyze Change and Error. Springer Nature Switzerland AG.
-<https://doi.org/10.1007/978-3-030-70765-1>
 
-Bilintoh, T.M., (2022). Intensity Analysis to Study the Dynamics of reforestation in the Rio Doce Water Basin, Brazil. Frontiers in Remote Sensing,  3 (873341), 13. <https://doi.org/10.3389/frsen.2022.873341> 
+Bilintoh, T.M., (2022). Intensity Analysis to Study the Dynamics of reforestation in the Rio Doce Water Basin, Brazil. Frontiers in Remote Sensing,  3 (873341), 13. 
 
-Pontius Jr, R. G. (2019). Component Intensities to relate difference by category with difference overall.International Journal of Applied Earth Observation and Geoinformation, 77: 94-99. <https://doi.org/10.1016/j.jag.2018.07.024>
+Pontius Jr, R. G. (2019). Component Intensities to relate difference by category with difference overall.International Journal of Applied Earth Observation and Geoinformation, 77: 94-99. 
 
 Pontius Jr, R. G., Krithivasan, R., Sauls, L., Yan, Y., & Zhang, Y. (2017). Methods to summarize change among land
-categories across time intervals. Journal of Land Use Science, 12(4), 218–230. <https://doi.org/10.1080/1747423X.2017.1338768>
+categories across time intervals. Journal of Land Use Science, 12(4), 218–230. 
 
-Pontius Jr, R. G., & Santacruz, A. (2014). Quantity, exchange, and shift components of difference in a square contingency table. International Journal of Remote Sensing, 35(21), 7543–7554. <https://dx.doi.org/10.1080/2150704X.2014.969814>
+Pontius Jr, R. G., & Santacruz, A. (2014). Quantity, exchange, and shift components of difference in a square contingency table. International Journal of Remote Sensing, 35(21), 7543–7554. 

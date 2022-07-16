@@ -6,8 +6,8 @@
 \usage{
 dataStack(
   x,
-  category = 1,
   nodata = 2,
+  category = 1,
   unified = "yes",
   timePoints = c(2000, 2001, 2002, 2003, 2005),
   categoryName = "marsh",
@@ -17,9 +17,9 @@ dataStack(
 \arguments{
 \item{x}{is the data, which must be a RasterStack,RasterBrick,SpatRaster or data frame.}
 
-\item{category}{is the category of interest. The default is set to 1.}
-
 \item{nodata}{is alphanumeric, which denotes no data in the data set.}
+
+\item{category}{is the category of interest. The default is set to 1.}
 
 \item{unified}{is a string, which can be "yes" or "no" only. If "yes," the change is a percentage of a region's
 unified area; else, the change is a percentage of the  entire region under consideration.}
@@ -37,12 +37,14 @@ The output from \code{\link{dataStack}}
 Creates results that serve as input for the stackbarPlot function.
 }
 \examples{
-\dontrun{trajPlot(x,
-                  category = 1,
-                   nodata = 2,
-                   unified = "yes",
-                   timePoints = c(2000,2001,2002,2003,2005),
-                   categoryName = "Category",
-                   regionName = "Study Region")
-}
+example_data <- terra::rast(system.file("external/Example_raster_Y.tif",package="binaryTimeSeries"))
+no_data <- 2
+cat_interest <- 1
+unified_resp <- "yes"
+time_points <- c(2000,2001,2002,2003,2005)
+categ_name <- "Category"
+region_name <- "Study Region"
+datstk_output <- dataStack(x = example_data,nodata = no_data,category = cat_interest,
+unified = unified_resp,timePoints = time_points,categoryName = categ_name,
+regionName = region_name)
 }
